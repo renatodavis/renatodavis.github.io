@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Renato Davis Ruiz Batista — Analista Desenvolvedor Sênior em Delphi, Java, Spring Boot e IA Agêntica. 15+ anos de experiência. Maringá, PR.">
+  <meta name="author" content="Renato Davis Ruiz Batista">
+  <meta property="og:title" content="Renato Davis — Portfólio">
+  <meta property="og:description" content="Analista Desenvolvedor Sênior · Delphi · Java · Spring Boot · IA Agêntica · 15+ anos">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://renatodavis.github.io">
+  <title>Renato Davis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #F8FAFC;
+      --bg-surface:   #FFFFFF;
+      --bg-subtle:    #F1F5F9;
+      --text-primary: #0F172A;
+      --text-sec:     #475569;
+      --text-tert:    #94A3B8;
+      --accent:       #2563EB;
+      --accent-h:     #1D4ED8;
+      --ai:           #059669;
+      --ai-bg:        #ECFDF5;
+      --ai-text:      #065F46;
+      --legacy-bg:    #FFF7ED;
+      --legacy-text:  #C2410C;
+      --border:       #E2E8F0;
+      --shadow-sm:    0 1px 2px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+      --tag-bg:       #EFF6FF;
+      --tag-text:     #1E40AF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:           #0A0F1E;
+        --bg-surface:   #111827;
+        --bg-subtle:    #1E293B;
+        --text-primary: #F1F5F9;
+        --text-sec:     #94A3B8;
+        --text-tert:    #475569;
+        --accent:       #60A5FA;
+        --accent-h:     #93C5FD;
+        --ai:           #34D399;
+        --ai-bg:        #064E3B;
+        --ai-text:      #6EE7B7;
+        --legacy-bg:    #431407;
+        --legacy-text:  #FDBA74;
+        --border:       #1E293B;
+        --shadow-sm:    0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+        --shadow-md:    0 4px 16px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+        --tag-bg:       #1E3A5F;
+        --tag-text:     #93C5FD;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg:           #0A0F1E;
+      --bg-surface:   #111827;
+      --bg-subtle:    #1E293B;
+      --text-primary: #F1F5F9;
+      --text-sec:     #94A3B8;
+      --text-tert:    #475569;
+      --accent:       #60A5FA;
+      --accent-h:     #93C5FD;
+      --ai:           #34D399;
+      --ai-bg:        #064E3B;
+      --ai-text:      #6EE7B7;
+      --legacy-bg:    #431407;
+      --legacy-text:  #FDBA74;
+      --border:       #1E293B;
+      --shadow-sm:    0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+      --shadow-md:    0 4px 16px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.2);
+      --tag-bg:       #1E3A5F;
+      --tag-text:     #93C5FD;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,15,30,0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-inner {
+      max-width: 1280px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 54px;
+    }
+    .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.0625rem; color:#F1F5F9; text-decoration:none; letter-spacing:-0.02em; }
+    .nav-logo em { color:#60A5FA; font-style:normal; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { font-size:0.75rem; font-weight:500; color:#64748B; text-decoration:none; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.18s; }
+    .nav-links a:hover { color:#CBD5E1; }
+
+    /* HERO */
+    .hero { position:relative; background:#0A0F1E; overflow:hidden; }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background-image: linear-gradient(rgba(96,165,250,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(96,165,250,0.06) 1px,transparent 1px);
+      background-size:52px 52px;
+      mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,transparent 10%,black 85%);
+      -webkit-mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,transparent 10%,black 85%);
+    }
+    .hero::after {
+      content:''; position:absolute; right:-160px; top:-160px; width:700px; height:700px;
+      background:radial-gradient(circle,rgba(37,99,235,0.13) 0%,transparent 65%);
+      pointer-events:none;
+    }
+    .hero-inner {
+      position:relative; z-index:1; max-width:1280px; margin:0 auto;
+      padding:6rem 2rem 5rem;
+      display:grid; grid-template-columns:1fr auto; gap:3rem; align-items:center;
+    }
+    .hero-eyebrow {
+      font-family:'JetBrains Mono',monospace; font-size:0.6875rem; font-weight:500;
+      color:#34D399; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1.25rem;
+      display:flex; align-items:center; gap:0.625rem;
+    }
+    .hero-eyebrow::before { content:''; display:inline-block; width:20px; height:1px; background:#34D399; flex-shrink:0; }
+    .hero-name {
+      font-family:'Syne',sans-serif; font-weight:800;
+      font-size:clamp(2.5rem,5.5vw,4.25rem);
+      line-height:1.06; color:#F1F5F9; letter-spacing:-0.035em; margin-bottom:1.125rem;
+    }
+    .hero-name .blue { color:#60A5FA; }
+    .hero-subtitle { font-size:1.0625rem; color:#94A3B8; line-height:1.55; max-width:520px; margin-bottom:0.5rem; }
+    .hero-location { font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#475569; margin-bottom:2.25rem; }
+    .hero-cta { display:flex; gap:0.75rem; flex-wrap:wrap; }
+
+    .btn {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.5625rem 1.25rem; border-radius:6px; font-size:0.8125rem; font-weight:500;
+      text-decoration:none; transition:all 0.18s; cursor:pointer; border:none;
+      font-family:'Inter',sans-serif; white-space:nowrap;
+    }
+    .btn:focus-visible { outline:2px solid #60A5FA; outline-offset:2px; }
+    .btn-primary { background:#2563EB; color:#fff; }
+    .btn-primary:hover { background:#1D4ED8; transform:translateY(-1px); box-shadow:0 4px 16px rgba(37,99,235,0.4); }
+    .btn-ghost-dark { background:rgba(255,255,255,0.05); color:#94A3B8; border:1px solid rgba(255,255,255,0.08); }
+    .btn-ghost-dark:hover { background:rgba(255,255,255,0.09); color:#CBD5E1; }
+    .btn-outline { background:var(--bg-surface); color:var(--text-sec); border:1px solid var(--border); }
+    .btn-outline:hover { background:var(--bg-subtle); color:var(--text-primary); }
+
+    .hero-stats { display:flex; flex-direction:column; gap:1.5rem; text-align:right; }
+    .stat-number { font-family:'Syne',sans-serif; font-size:2.25rem; font-weight:800; color:#F1F5F9; line-height:1; letter-spacing:-0.04em; }
+    .stat-label { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; color:#475569; text-transform:uppercase; letter-spacing:0.1em; margin-top:0.2rem; }
+
+    /* LAYOUT */
+    .wrap { max-width:1280px; margin:0 auto; padding:0 2rem; }
+    section { padding:5rem 0; border-bottom:1px solid var(--border); }
+    section:last-of-type { border-bottom:none; }
+    .section-eyebrow { font-family:'JetBrains Mono',monospace; font-size:0.625rem; font-weight:500; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem; }
+    .section-title { font-family:'Syne',sans-serif; font-size:1.875rem; font-weight:700; color:var(--text-primary); letter-spacing:-0.025em; margin-bottom:3rem; }
+
+    /* ABOUT */
+    .about-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:4.5rem; align-items:start; }
+    .about-bio { font-size:1rem; color:var(--text-sec); line-height:1.78; }
+    .about-bio p+p { margin-top:1rem; }
+    .about-bio strong { color:var(--text-primary); font-weight:600; }
+    .about-bio .ai-mark { color:var(--ai); font-weight:600; }
+    .quote-block { margin-top:2rem; padding:1.25rem 1.5rem; border-left:2px solid var(--accent); background:var(--bg-surface); border-radius:0 8px 8px 0; }
+    .quote-text { font-size:0.875rem; color:var(--text-sec); line-height:1.65; font-style:italic; }
+    .quote-author { margin-top:0.75rem; font-family:'JetBrains Mono',monospace; font-size:0.6875rem; color:var(--text-tert); }
+    .stack-list { display:flex; flex-direction:column; gap:1rem; }
+    .stack-row { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:0.875rem 1.125rem; }
+    .stack-label { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; font-weight:500; color:var(--text-tert); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:0.375rem; }
+    .tag { font-family:'JetBrains Mono',monospace; font-size:0.6875rem; font-weight:500; padding:0.2rem 0.5625rem; border-radius:4px; line-height:1.5; }
+    .tag-blue { background:var(--tag-bg); color:var(--tag-text); }
+    .tag-green { background:var(--ai-bg); color:var(--ai-text); }
+    .tag-orange { background:var(--legacy-bg); color:var(--legacy-text); }
+
+    /* TIMELINE */
+    .timeline { position:relative; padding-left:1.75rem; }
+    .timeline::before { content:''; position:absolute; left:0; top:8px; bottom:0; width:1px; background:var(--border); }
+    .tl-item { position:relative; padding-bottom:2.25rem; }
+    .tl-item:last-child { padding-bottom:0; }
+    .tl-dot { position:absolute; left:-1.75rem; top:7px; width:8px; height:8px; border-radius:50%; background:var(--border); margin-left:-3.5px; border:2px solid var(--bg); }
+    .tl-dot.active { background:var(--ai); box-shadow:0 0 0 3px color-mix(in srgb,var(--ai) 20%,transparent); width:10px; height:10px; margin-left:-4.5px; top:6px; }
+    .tl-period { font-family:'JetBrains Mono',monospace; font-size:0.625rem; color:var(--text-tert); margin-bottom:0.3rem; }
+    .tl-role { font-family:'Syne',sans-serif; font-size:1.0625rem; font-weight:700; color:var(--text-primary); letter-spacing:-0.015em; }
+    .tl-company { font-size:0.875rem; color:var(--accent); font-weight:500; margin-top:0.2rem; }
+    .tl-meta { font-size:0.8125rem; color:var(--text-tert); margin-top:0.25rem; }
+
+    /* PROJECTS */
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.125rem; }
+    .proj-card { background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; padding:1.5rem; box-shadow:var(--shadow-sm); transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+    .proj-card:hover { box-shadow:var(--shadow-md); border-color:color-mix(in srgb,var(--accent) 40%,var(--border)); transform:translateY(-2px); }
+    .proj-card:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+    .proj-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1rem; }
+    .proj-icon { font-size:1.375rem; line-height:1; }
+    .proj-lang { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; font-weight:500; color:var(--text-tert); background:var(--bg-subtle); border:1px solid var(--border); padding:0.2rem 0.5rem; border-radius:4px; }
+    .proj-name { font-family:'Syne',sans-serif; font-size:0.9375rem; font-weight:700; color:var(--text-primary); letter-spacing:-0.015em; margin-bottom:0.5rem; }
+    .proj-desc { font-size:0.8125rem; color:var(--text-sec); line-height:1.58; flex:1; margin-bottom:1rem; }
+    .proj-footer { display:flex; align-items:center; gap:0.75rem; font-family:'JetBrains Mono',monospace; font-size:0.625rem; color:var(--text-tert); }
+    .proj-featured { grid-column:span 2; background:linear-gradient(135deg,#0E1B3D 0%,#091428 100%); border-color:rgba(37,99,235,0.25); }
+    .proj-featured .proj-name { color:#F1F5F9; }
+    .proj-featured .proj-desc { color:#94A3B8; }
+    .proj-featured .proj-footer { color:#475569; }
+    .proj-featured:hover { border-color:rgba(37,99,235,0.5); box-shadow:0 8px 32px rgba(37,99,235,0.15),0 4px 12px rgba(0,0,0,0.3); }
+    .proj-badge { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; font-weight:500; background:rgba(52,211,153,0.12); color:#34D399; border:1px solid rgba(52,211,153,0.25); padding:0.2rem 0.625rem; border-radius:4px; letter-spacing:0.08em; text-transform:uppercase; }
+
+    /* SKILLS */
+    .skills-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.125rem; }
+    .skill-cat { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:1.375rem; }
+    .skill-cat-label { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; font-weight:500; color:var(--text-tert); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.875rem; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:0.375rem; }
+
+    /* CERTS */
+    .certs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .cert-card { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:1.125rem 1.25rem; }
+    .cert-issuer { font-family:'JetBrains Mono',monospace; font-size:0.5625rem; font-weight:500; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.4rem; }
+    .cert-name { font-size:0.875rem; font-weight:600; color:var(--text-primary); line-height:1.35; margin-bottom:0.375rem; }
+    .cert-date { font-family:'JetBrains Mono',monospace; font-size:0.625rem; color:var(--text-tert); }
+
+    /* CONTACT */
+    .contact-wrap { text-align:center; padding:5rem 0 3rem; }
+    .contact-title { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; color:var(--text-primary); letter-spacing:-0.035em; margin-bottom:0.75rem; }
+    .contact-sub { font-size:1rem; color:var(--text-sec); margin-bottom:2rem; }
+    .contact-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:4rem; }
+    .footer-bar { border-top:1px solid var(--border); padding-top:1.75rem; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:var(--text-tert); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns:1fr; gap:2.5rem; }
+      .projects-grid { grid-template-columns:1fr; }
+      .proj-featured { grid-column:span 1; }
+      .skills-grid { grid-template-columns:1fr; }
+      .certs-grid { grid-template-columns:repeat(2,1fr); }
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-stats { flex-direction:row; text-align:left; gap:2rem; margin-top:2.5rem; }
+      .nav-links { display:none; }
+    }
+    @media (max-width: 600px) {
+      .certs-grid { grid-template-columns:1fr; }
+      .hero-name { font-size:2.25rem; }
+      section { padding:3.5rem 0; }
+      .wrap { padding:0 1.25rem; }
+      .hero-inner { padding:4rem 1.25rem 3.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition:none !important; animation:none !important; }
+    }
+    a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:3px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Navegação principal">
+  <div class="nav-inner">
+    <a href="#topo" class="nav-logo">RD<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="topo" class="hero" aria-label="Apresentação">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow" role="text">Disponível para novas oportunidades</div>
+      <h1 class="hero-name">Renato Davis<br><span class="blue">Ruiz Batista</span></h1>
+      <p class="hero-subtitle">Analista Desenvolvedor Sênior · Delphi · Java · Spring Boot · IA Agêntica</p>
+      <p class="hero-location">📍 Maringá, PR, Brasil · Remoto · 15+ anos de experiência</p>
+      <div class="hero-cta">
+        <a href="https://github.com/renatodavis" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/renatodavisbatista/" class="btn btn-ghost-dark" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:renatodavis@gmail.com" class="btn btn-ghost-dark">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="Métricas">
+      <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Anos de exp.</div></div>
+      <div class="stat"><div class="stat-number">70+</div><div class="stat-label">Competências</div></div>
+      <div class="stat"><div class="stat-number">434</div><div class="stat-label">Contribuições/ano</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="section-eyebrow">01 // Sobre</div>
+    <h2 class="section-title">Da engenharia legada à IA agêntica</h2>
+    <div class="about-grid">
+      <div>
+        <div class="about-bio">
+          <p>Com mais de <strong>15 anos construindo sistemas de missão crítica</strong>, percorri a trajetória dos ERPs Delphi robustos, das integrações fiscais complexas (NF-e, SPED, ACBR) até as arquiteturas Java/Spring Boot modernas — sempre com foco em código que resiste ao tempo.</p>
+          <p>Hoje estou na fronteira da <span class="ai-mark">IA Agêntica</span>: desenvolvo sistemas multi-agente com autonomia real, usando Python, FastAPI, Google ADK e LLMs. Acredito que a combinação de profundidade em sistemas legados com domínio de IA cria profissionais raros — capazes de modernizar o que existe e construir o que ainda não existe.</p>
+          <p>Atualmente Desenvolvedor Delphi Sênior na <strong>Softplan</strong>, em regime remoto. <em>Aberto a desafios em Delphi, Java, desenvolvimento sênior e especialização em IA.</em></p>
+        </div>
+        <blockquote class="quote-block" aria-label="Recomendação de colega">
+          <p class="quote-text">"Renato é um profissional excepcional. Com conhecimento avançado em Delphi e C#, sólida compreensão de orientação a objetos, domínio de threads e SQL — incluindo técnicas avançadas como OUTER APPLY e SQL Server Profiler. Em toda a minha carreira, ele é um dos melhores profissionais com quem já trabalhei."</p>
+          <p class="quote-author">— Washington Ferreira, Desenvolvedor Sênior Delphi</p>
+        </blockquote>
+      </div>
+      <div class="stack-list">
+        <div class="stack-row">
+          <div class="stack-label">Backend &amp; Legado</div>
+          <div class="tag-row">
+            <span class="tag tag-orange">Delphi</span><span class="tag tag-orange">C#</span>
+            <span class="tag tag-blue">Java</span><span class="tag tag-blue">Spring Boot</span><span class="tag tag-blue">Python</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-label">Frontend</div>
+          <div class="tag-row">
+            <span class="tag tag-blue">React</span><span class="tag tag-blue">TypeScript</span>
+            <span class="tag tag-blue">ExtJS</span><span class="tag tag-blue">ASP.NET MVC</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-label">Banco de Dados</div>
+          <div class="tag-row">
+            <span class="tag tag-orange">SQL Server</span>
+            <span class="tag tag-blue">PostgreSQL</span><span class="tag tag-blue">Oracle</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-label">IA Agêntica</div>
+          <div class="tag-row">
+            <span class="tag tag-green">LLMs</span><span class="tag tag-green">RAG</span>
+            <span class="tag tag-green">Google ADK</span><span class="tag tag-green">Claude Code</span>
+            <span class="tag tag-green">Agentes Autônomos</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-label">Fiscal &amp; ERP</div>
+          <div class="tag-row">
+            <span class="tag tag-orange">NF-e</span><span class="tag tag-orange">NFC-e</span>
+            <span class="tag tag-orange">CT-e</span><span class="tag tag-orange">SPED Fiscal</span>
+            <span class="tag tag-orange">SPED Contábil</span><span class="tag tag-orange">ACBR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia">
+    <div class="section-eyebrow">02 // Experiência</div>
+    <h2 class="section-title">Trajetória profissional</h2>
+    <div class="timeline" role="list">
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot active" aria-hidden="true"></div>
+        <div class="tl-period">set 2025 – presente · 1 ano</div>
+        <div class="tl-role">Analista Desenvolvedor Delphi Sênior</div>
+        <div class="tl-company">Softplan</div>
+        <div class="tl-meta">Maringá, PR · Remoto · Tempo integral</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-period">mai 2025 – set 2025 · 5 meses</div>
+        <div class="tl-role">Desenvolvedor Java</div>
+        <div class="tl-company">Sinqia</div>
+        <div class="tl-meta">Maringá, PR · Remoto · Tempo integral</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-period">jul 2024 – abr 2025 · 10 meses</div>
+        <div class="tl-role">Desenvolvedor Java</div>
+        <div class="tl-company">Equiplano Sistemas</div>
+        <div class="tl-meta">Remoto · Tempo integral</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-period">fev 2024 – jun 2024 · 5 meses</div>
+        <div class="tl-role">Desenvolvedor de Software Sênior</div>
+        <div class="tl-company">Linx</div>
+        <div class="tl-meta">Tempo integral · Desktop, Delphi, C#</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" aria-hidden="true"></div>
+        <div class="tl-period">jul 2022 – jan 2024 · 1 ano 7 meses</div>
+        <div class="tl-role">Analista de Sistemas Sênior</div>
+        <div class="tl-company">Grupo Dass</div>
+        <div class="tl-meta">Tempo integral · Delphi, JIRA, 36+ competências</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="section-eyebrow">03 // Projetos</div>
+    <h2 class="section-title">O que construí</h2>
+    <div class="projects-grid">
+      <a href="https://github.com/renatodavis/oportunity-agent" class="proj-card proj-featured" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top">
+          <span class="proj-icon" aria-hidden="true">🤖</span>
+          <span class="proj-badge">Em construção</span>
+        </div>
+        <div class="proj-name">SaaS Opportunity Engine</div>
+        <div class="proj-desc">Plataforma multi-agente para descoberta e validação de oportunidades SaaS. Atua como agente-investidor: recebe uma tese e produz um Investment Memo com scoring, evidências e recomendação de decisão. Arquitetura Evidence-First com Python, FastAPI, Google ADK e PostgreSQL.</div>
+        <div class="proj-footer">
+          <span class="proj-lang" style="background:rgba(96,165,250,0.1);border-color:rgba(96,165,250,0.2);color:#60A5FA;">Python · FastAPI</span>
+          <span>Google ADK · LLMs · PostgreSQL</span>
+        </div>
+      </a>
+      <a href="https://github.com/renatodavis/DelphiEscola" class="proj-card" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top"><span class="proj-icon">🏫</span><span class="proj-lang">Delphi</span></div>
+        <div class="proj-name">DelphiEscola</div>
+        <div class="proj-desc">Sistema de gestão escolar em Delphi. Um dos mais forkeados, demonstrando domínio de aplicações desktop corporativas.</div>
+        <div class="proj-footer"><span>★ 6</span><span>⑂ 9</span></div>
+      </a>
+      <a href="https://github.com/renatodavis/ErpSystem" class="proj-card" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top"><span class="proj-icon">🏭</span><span class="proj-lang">C# · JS</span></div>
+        <div class="proj-name">ErpSystem</div>
+        <div class="proj-desc">ERP corporativo em C# com ExtJS 4. Arquitetura model-driven para gestão completa de recursos empresariais.</div>
+        <div class="proj-footer"><span>★ 2</span><span>⑂ 3</span></div>
+      </a>
+      <a href="https://github.com/renatodavis/front-end-react" class="proj-card" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top"><span class="proj-icon">⚛️</span><span class="proj-lang">TypeScript</span></div>
+        <div class="proj-name">front-end-react</div>
+        <div class="proj-desc">Front-end com React e TypeScript integrado a API REST. Demonstra domínio da stack moderna de frontend.</div>
+        <div class="proj-footer"><span>React · TypeScript · API</span></div>
+      </a>
+      <a href="https://github.com/renatodavis/observability-grafana" class="proj-card" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top"><span class="proj-icon">📊</span><span class="proj-lang">JavaScript</span></div>
+        <div class="proj-name">observability-grafana</div>
+        <div class="proj-desc">Solução de observabilidade com Grafana. Dashboards e monitoramento para sistemas em produção.</div>
+        <div class="proj-footer"><span>Grafana · Observabilidade</span></div>
+      </a>
+      <a href="https://github.com/renatodavis/verify-merge" class="proj-card" target="_blank" rel="noopener noreferrer">
+        <div class="proj-top"><span class="proj-icon">🔍</span><span class="proj-lang">JavaScript</span></div>
+        <div class="proj-name">verify-merge</div>
+        <div class="proj-desc">Ferramenta de verificação de merges em releases. Confirma se cherry-picks foram aplicados corretamente em tags e releases.</div>
+        <div class="proj-footer"><span>Git · Release Management</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-eyebrow">04 // Competências</div>
+    <h2 class="section-title">70+ skills em domínio ativo</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-label">Linguagens de Programação</div>
+        <div class="skill-tags">
+          <span class="tag tag-orange">Delphi</span><span class="tag tag-orange">C#</span>
+          <span class="tag tag-orange">Component Pascal</span>
+          <span class="tag tag-blue">Java</span><span class="tag tag-blue">Python</span>
+          <span class="tag tag-blue">TypeScript</span><span class="tag tag-blue">JavaScript</span>
+          <span class="tag tag-blue">SQL</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Frameworks &amp; Plataformas</div>
+        <div class="skill-tags">
+          <span class="tag tag-blue">Spring Boot</span><span class="tag tag-blue">React</span>
+          <span class="tag tag-blue">FastAPI</span><span class="tag tag-blue">ExtJS</span>
+          <span class="tag tag-blue">ASP.NET MVC</span><span class="tag tag-blue">SQLAlchemy</span>
+          <span class="tag tag-blue">Alembic</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">IA Agêntica</div>
+        <div class="skill-tags">
+          <span class="tag tag-green">Agentes de IA</span><span class="tag tag-green">LLMs</span>
+          <span class="tag tag-green">RAG</span><span class="tag tag-green">Google ADK</span>
+          <span class="tag tag-green">Claude Code</span><span class="tag tag-green">SDD &amp; Skills</span>
+          <span class="tag tag-green">Pipelines de IA</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Banco de Dados &amp; Infra</div>
+        <div class="skill-tags">
+          <span class="tag tag-orange">SQL Server</span><span class="tag tag-blue">PostgreSQL</span>
+          <span class="tag tag-blue">Oracle</span><span class="tag tag-blue">Docker</span>
+          <span class="tag tag-blue">Git</span><span class="tag tag-blue">Grafana</span>
+          <span class="tag tag-blue">JIRA</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Integrações Fiscais &amp; ERP</div>
+        <div class="skill-tags">
+          <span class="tag tag-orange">NF-e</span><span class="tag tag-orange">NFC-e</span>
+          <span class="tag tag-orange">CT-e</span><span class="tag tag-orange">SPED Fiscal</span>
+          <span class="tag tag-orange">SPED Contábil</span><span class="tag tag-orange">ACBR</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Metodologias &amp; Soft Skills</div>
+        <div class="skill-tags">
+          <span class="tag tag-blue">Scrum Master</span><span class="tag tag-blue">Kanban</span>
+          <span class="tag tag-blue">Code Review</span><span class="tag tag-blue">Arquitetura em Camadas</span>
+          <span class="tag tag-blue">DDD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICAÇÕES -->
+  <section>
+    <div class="section-eyebrow">05 // Formação</div>
+    <h2 class="section-title">Certificações &amp; Educação</h2>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-issuer">Globalcode · TDC 2026 Florianópolis</div>
+        <div class="cert-name">Trilha Agentic AI</div>
+        <div class="cert-date">jul 2026 · IA &amp; Agentes</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Alura</div>
+        <div class="cert-name">GPT e Java: Inteligência Artificial na JVM</div>
+        <div class="cert-date">jun 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Caelum</div>
+        <div class="cert-name">ASP.NET MVC: Qualidade no Desenvolvimento Web</div>
+        <div class="cert-date">Web Development</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">CESUMAR · Pós-graduação</div>
+        <div class="cert-name">Desenvolvimento Orientado a Objetos Java</div>
+        <div class="cert-date">2004 – 2005</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">CESUMAR · Graduação</div>
+        <div class="cert-name">Processamento de Dados</div>
+        <div class="cert-date">2000 – 2003 · Maringá, PR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="border-bottom:none">
+    <div class="contact-wrap">
+      <div class="section-eyebrow" style="text-align:center;margin-bottom:0.75rem;">06 // Contato</div>
+      <h2 class="contact-title">Vamos conversar?</h2>
+      <p class="contact-sub">Aberto a oportunidades remotas em Delphi, Java, desenvolvimento sênior e projetos de IA.</p>
+      <div class="contact-links">
+        <a href="mailto:renatodavis@gmail.com" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          renatodavis@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/renatodavisbatista/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+        <a href="https://github.com/renatodavis" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub →</a>
+      </div>
+      <div class="footer-bar">
+        <span>© 2026 Renato Davis Ruiz Batista</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.625rem;letter-spacing:0.05em;">Maringá · PR · Brasil</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  if (!links.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.style.color = '');
+        const active = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+        if (active) active.style.color = '#CBD5E1';
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+
+</body>
+</html>
